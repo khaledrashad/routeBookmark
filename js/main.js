@@ -31,8 +31,14 @@ function showBookmark() {
         <td>`+i+`</td>
         <td>`+bookmarkList[i].name+`</td>
         <td><a href=""><button class="btn btn-outline-danger">Visit</button></a></td>
-        <td><a href=""><button class="btn btn-outline-danger">Delete</button></a></td>
+        <td><button onclick="removeBookmark(`+i+`)" class="btn btn-outline-danger">Delete</button></td>
     </tr>`
     }
     document.getElementById("myContent").innerHTML = temp
+}
+
+function removeBookmark (index){
+    bookmarkList.splice(index,"1")
+    showBookmark()
+    localStorage.setItem("bookmarks", JSON.stringify(bookmarkList))
 }
