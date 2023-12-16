@@ -1,0 +1,14 @@
+.header h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 60px;
+}
+
+.header, .form {
+    border-bottom: 1px dotted white;
+}
+
+.form h2 {
+    background-image: linear-gradient(to right, #3ca55c, #b5ac49);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

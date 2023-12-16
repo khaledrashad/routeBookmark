@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="text-bg-dark">
+    <div class="container py-5">
+        <div class="header">
+            <h1 class="text-capitalize text-center pb-3">bookmarker</h1>
+        </div>
+        <div class="form py-lg-4">
+            <form action="submit">
+                <div class="fs-2 text-center formHeader">
+                    <span>
+                        <h2>
+                            <i class="fa-solid fa-bookmark"></i>
+                            Bookmark your favorite sites
+                            <i class="fa-solid fa-bookmark"></i>
+                        </h2>
+                    </span>
+                </div>
+                <i class="fa-solid fa-book-bookmark"></i>
+                <label for="siteName">Site name</label>
+                <input type="text" class="form-control my-3" id="siteName">
+                <i class="fa-solid fa-link"></i>
+                <label for="siteUrl">Site url</label>
+                <input type="text" class="form-control my-3" id="siteUrl">
+                <div class="formBtn text-center">
+                    <button type="button" class="btn btn-outline-info py-2 px-5 my-4" id="formSubmit">Submit</button>
+                </div>
+            </form>
+        </div>
+        <div class="contentTable">
+            <table class="w-100 table text-center table-secondary table-striped">
+                <thead>
+                    <tr>
+                        <th>Index</th>
+                        <th>Website name</th>
+                        <th>Visit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
