@@ -1,7 +1,7 @@
 var siteName = document.getElementById("siteName")
 var siteUrl = document.getElementById("siteUrl")
 var submitBtn = document.querySelector("#formSubmit")
-
+var modal = document.getElementById("modal")
 var bookmarkList = []
 
 if(localStorage.getItem("bookmarks") != null){
@@ -16,11 +16,18 @@ function addBookmark() {
         name: siteName.value,
         url: siteUrl.value
     }
-    bookmarkList.push(bookmark)
-    siteName.value = ""
-    siteUrl.value = ""
-    showBookmark()
-    localStorage.setItem("bookmarks", JSON.stringify(bookmarkList))
+    var validateName = /^[A-Za-z]{3,}$/
+    var validName = validateName.exec(bookmark.name)
+    if(validName != null  ){
+        console.log(validName)
+        bookmarkList.push(bookmark)
+        siteName.value = ""
+        siteUrl.value = ""
+        showBookmark()
+        localStorage.setItem("bookmarks", JSON.stringify(bookmarkList))
+    } else if(validName == null){
+        modal.style.display = "flex"
+    }
 }
 
 function showBookmark() {
@@ -30,7 +37,7 @@ function showBookmark() {
     <tr>
         <td>`+i+`</td>
         <td>`+bookmarkList[i].name+`</td>
-        <td><a href=""><button class="btn btn-outline-danger">Visit</button></a></td>
+        <td><a href="https://`+bookmarkList[i].url+`" onclick="visitBookmark()" class="btn btn-outline-danger">Visit</a></td>
         <td><button onclick="removeBookmark(`+i+`)" class="btn btn-outline-danger">Delete</button></td>
     </tr>`
     }
@@ -42,3 +49,4 @@ function removeBookmark (index){
     showBookmark()
     localStorage.setItem("bookmarks", JSON.stringify(bookmarkList))
 }
+
